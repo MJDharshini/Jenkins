@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if (localStorage.getItem("auth") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+<h1>Submit Feedback</h1>
+
+<button onclick="goAdmin()">Go to Admin Panel</button>
+<button onclick="logout()">Logout</button>
+
+<div class="card">
+<select id="faculty">
+<option value="">-- Select Faculty --</option>
+<option value="Dr. Rao">Dr. Rao</option>
+<option value="Prof. Meena">Prof. Meena</option>
+<option value="Mr. Arjun">Mr. Arjun</option>
+</select>
+
+<div class="stars">
+<span class="star" data-val="1">★</span>
+<span class="star" data-val="2">★</span>
+<span class="star" data-val="3">★</span>
+<span class="star" data-val="4">★</span>
+<span class="star" data-val="5">★</span>
+</div>
+
+<textarea id="comment" placeholder="Write anonymous feedback..."></textarea>
+
+<button onclick="submitFeedback()">Submit</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function logout() {
+  localStorage.removeItem("auth");
+  window.location.href = "login1.html";
+}
+
+function goAdmin() {
+  window.location.href = "admin.html";
+}
+</script>
+
+</body>
+</html>

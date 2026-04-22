@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if (localStorage.getItem("auth") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+<h1>Admin Panel</h1>
+
+<button onclick="goBack()">Back to Feedback</button>
+<button onclick="logout()">Logout</button>
+
+<div class="card">
+
+<select id="filterFaculty">
+<option value="all">All Faculty</option>
+<option value="Dr. Rao">Dr. Rao</option>
+<option value="Prof. Meena">Prof. Meena</option>
+<option value="Mr. Arjun">Mr. Arjun</option>
+</select>
+
+<button onclick="showReport()">View Report</button>
+
+<div id="report"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function logout() {
+  localStorage.removeItem("auth");
+  window.location.href = "login1.html";
+}
+
+function goBack() {
+  window.location.href = "index1.html";
+}
+</script>
+
+</body>
+</html>
